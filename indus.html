@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/VG/Downloads/NAMCW_Form_Aligned_GSheet.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Additive Manufacturing Centre West – Enquiry Form</title>
+
+<style>
+    :root {
+        --primary: #0052cc;
+        --primary-dark: #003a8c;
+        --accent: #f06543;
+        --bg-dark: #050b24;
+        --card-bg: #ffffff;
+        --border-soft: #e4e7f2;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --radius-lg: 20px;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #203073 0, #050b24 55%, #020617 100%);
+        color: var(--text-main);
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 40px 16px;
+    }
+    .shell {
+        width: 100%;
+        max-width: 1100px;
+    }
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        padding: 6px 4px;
+        color: #e5e7eb;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    .top-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 0 4px rgba(34,197,94,0.25);
+    }
+    .pill {
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(148,163,184,0.55);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .pill span.key {
+        opacity: 0.7;
+    }
+    .card {
+        background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(246,248,255,0.98));
+        border-radius: var(--radius-lg);
+        box-shadow:
+            0 24px 60px rgba(15,23,42,0.45),
+            0 0 0 1px rgba(148,163,184,0.45);
+        padding: 30px 34px 32px;
+    }
+    .card-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 22px;
+        border-bottom: 1px solid var(--border-soft);
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+    .logo-wrap {
+        flex-shrink: 0;
+        padding: 8px 10px;
+        border-radius: 14px;
+        background: radial-gradient(circle at top left, #ffffff 0, #e0edff 55%, #fef3f2 100%);
+        border: 1px solid rgba(148,163,184,0.35);
+        box-shadow: 0 12px 25px rgba(15,23,42,0.18);
+    }
+    .logo-wrap img {
+        display: block;
+        height: 52px;
+        width: auto;
+    }
+    .title-block h1 {
+        font-size: 24px;
+        margin: 0 0 4px;
+        color: var(--text-main);
+    }
+    .title-block .subtitle-main {
+        margin: 0;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--primary-dark);
+        font-weight: 600;
+    }
+    .title-block .subtitle-desc {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--text-muted);
+        max-width: 620px;
+        line-height: 1.5;
+    }
+    .tag-row {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 11px;
+    }
+    .tag {
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.03);
+        border: 1px solid rgba(148,163,184,0.5);
+        color: #4b5563;
+    }
+    form {
+        margin-top: 6px;
+    }
+    .section-title {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #6b7280;
+        margin: 20px 0 8px;
+    }
+    .field-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+    .field {
+        flex: 1 1 260px;
+        min-width: 0;
+    }
+    label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 6px;
+    }
+    label span.req {
+        color: #ef4444;
+        margin-left: 4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #d1d5db;
+        padding: 10px 12px;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+        background: #f9fafb;
+    }
+    input:focus,
+    textarea:focus {
+        border-color: var(--primary);
+        background:#ffffff;
+        box-shadow: 0 0 0 1px rgba(37,99,235,0.15), 0 0 0 4px rgba(37,99,235,0.08);
+    }
+    textarea {
+        resize: vertical;
+        min-height: 90px;
+    }
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 6px 14px;
+        border-radius: 14px;
+        border: 1px dashed #cbd5f5;
+        background: rgba(248,250,252,0.9);
+        padding: 14px 14px 10px;
+        margin-top: 4px;
+    }
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #374151;
+    }
+    .checkbox-item input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        border-radius: 4px;
+        border: 1px solid #cbd5f5;
+    }
+    .declaration-box {
+        border-radius: 14px;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+        padding: 12px 14px;
+        font-size: 13px;
+        color: #4b5563;
+    }
+    .helper-text {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-top: 4px;
+    }
+    .form-footer {
+        margin-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .btn-primary {
+        padding: 11px 26px;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 14px 30px rgba(15,23,42,0.35);
+    }
+    .btn-primary span.icon {
+        font-size: 16px;
+        transform: translateY(1px);
+    }
+    .btn-primary:hover {
+        box-shadow: 0 18px 40px rgba(15,23,42,0.45);
+        transform: translateY(-1px);
+    }
+    .meta {
+        font-size: 11px;
+        color: #9ca3af;
+        text-align: right;
+    }
+    @media (max-width: 720px) {
+        .card {
+            padding: 20px 18px 22px;
+        }
+        .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .logo-wrap img {
+            height: 46px;
+        }
+        .form-footer {
+            align-items: stretch;
+        }
+        .meta {
+            text-align: left;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+    <div class="top-bar">
+        <div class="top-left">
+            <div class="status-dot"></div>
+            <span>NAMCW • Enquiry / Registration</span>
+        </div>
+        <div class="pill">
+            <span class="key">Form</span><span>National Additive Manufacturing Centre West - Enquiry</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="logo-wrap">
+                <img src="data:image/jpeg;base64,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" alt="NAMCW - Ganpat University Logo">
+            </div>
+            <div class="title-block">
+                <p class="subtitle-main">National Additive Manufacturing Centre – West</p>
+                <h1>Enquiry / Registration Form</h1>
+                <p class="subtitle-desc">
+                    Please share your details below to express interest in NAMCW activities: Awareness Programs,
+                    Certification Programs, and Research Activities.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Awareness Program</span>
+                    <span class="tag">Certification Program</span>
+                    <span class="tag">Research Activities</span>
+                </div>
+            </div>
+        </div>
+
+        <form id="namcw-form">
+
+            <div class="section-title">Basic Information</div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Name<span class="req">*</span></label>
+                    <input type="text" name="name" placeholder="Enter your full name" required="">
+                </div>
+                <div class="field">
+                    <label>Contact No.<span class="req">*</span></label>
+                    <input type="text" name="contactNo" placeholder="e.g. +91-9876543210" required="">
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Email ID<span class="req">*</span></label>
+                    <input type="email" name="email" placeholder="yourname@example.com" required="">
+                </div>
+            </div>
+
+            <div class="section-title">Interest &amp; Organization</div>
+
+            <label>Interested for<span class="req">*</span></label>
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest_awareness" value="Awareness Program">
+                    <span>Awareness Program</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest_certification" value="Certification Program">
+                    <span>Certification Program</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" name="interest_research" value="Research Activities">
+                    <span>Research Activities</span>
+                </label>
+            </div>
+            <div class="helper-text">You may select one or more options.</div>
+
+            <div class="field-row" style="margin-top:14px;">
+                <div class="field">
+                    <label>Name of University or Organization<span class="req">*</span></label>
+                    <input type="text" name="organization" placeholder="Institution / Organization name" required="">
+                </div>
+                <div class="field">
+                    <label>State Name<span class="req">*</span></label>
+                    <input type="text" name="stateName" placeholder="e.g. Gujarat" required="">
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Name of Department<span class="req">*</span></label>
+                    <input type="text" name="department" placeholder="e.g. Mechanical Engineering" required="">
+                </div>
+            </div>
+
+            <div class="section-title">Declaration</div>
+
+            <div class="declaration-box">
+                I hereby declare that the information provided above is true and correct to the best of my knowledge
+                and belief. I consent to the use of my contact information for future communication related to this
+                submission.
+            </div>
+            <div style="margin-top:10px;">
+                <label class="checkbox-item">
+                    <input type="checkbox" name="declaration" required="">
+                    <span>Confirm and Agree</span>
+                </label>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn-primary">
+                    <span>Submit</span>
+                    <span class="icon">➜</span>
+                </button>
+                <div class="meta">
+                    Responses will be written to the existing Google Sheet<br>
+                    and notified to: chairperson.am.coe@ganpatuniversity.ac.in
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+// IMPORTANT: After you deploy your Google Apps Script Web App,
+// replace this with the Web App URL (ending in /exec)
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyf2l2Y3cbSTfNhc5xFko0kS2hh7DOlQZTzaLy1GaKJi6k3aTaRpoLjAG5XyO4h4Mbe/exec";
+
+document.getElementById('namcw-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    // Build 'Interested for' string like Google Form does (comma-separated)
+    const interests = [];
+    if (form.interest_awareness.checked) interests.push(form.interest_awareness.value);
+    if (form.interest_certification.checked) interests.push(form.interest_certification.value);
+    if (form.interest_research.checked) interests.push(form.interest_research.value);
+
+    if (interests.length === 0) {
+        alert("Please select at least one option in 'Interested for'.");
+        return;
+    }
+
+    const payload = {
+        name: form.name.value.trim(),
+        contactNo: form.contactNo.value.trim(),
+        email: form.email.value.trim(),
+        interestedFor: interests.join(", "),
+        organization: form.organization.value.trim(),
+        stateName: form.stateName.value.trim(),
+        department: form.department.value.trim(),
+        declaration: form.declaration.checked
+    };
+
+    try {
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        alert("Thank you! Your response has been submitted.");
+        form.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+        console.error(err);
+        alert("There was an error submitting the form. Please try again or contact NAMCW.");
+    }
+});
+</script>
+
+
+
+</body></html>
